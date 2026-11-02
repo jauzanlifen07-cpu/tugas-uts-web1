@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Masuk ke Pustaka Online">
+  <title>Masuk | Pustaka Online</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <main class="login">
+    <section class="login-hero" aria-label="Tentang Pustaka Online">
+      <img src="assets/logo.svg" alt="Logo Pustaka Online" width="56" height="56">
+      <h1>Pustaka Online</h1>
+      <p>Pesan buku favorit, cek stok, dan lacak kiriman dalam satu tempat.</p>
+      <div class="rak" aria-hidden="true"><img src="img/buku1.svg" alt=""><img src="img/buku4.svg" alt=""><img src="img/buku5.svg" alt=""><img src="img/buku7.svg" alt=""></div>
+    </section>
+    <section class="login-form kartu" aria-labelledby="judulLogin">
+      <h2 id="judulLogin">Masuk ke akun Anda</h2>
+      <form id="formLogin" novalidate>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@mail.com" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Minimal 6 karakter" autocomplete="current-password" required>
+        <p class="error" id="errLogin" role="alert"></p>
+        <button class="btn utama lebar" type="submit">Login</button>
+      </form>
+      <div class="baris-tombol">
+        <button class="btn tautan" id="btnLupa" type="button">Lupa Password</button>
+        <button class="btn tautan" id="btnDaftar" type="button">Daftar</button>
+      </div>
+      <p class="petunjuk">Akun demo: jauzan@mail.com / 123456</p>
+    </section>
+  </main>
+
+  <div class="modal" id="m-lupa" role="dialog" aria-modal="true" aria-labelledby="tLupa">
+    <div class="modal-box">
+      <h2 id="tLupa">Lupa Password</h2>
+      <p>Masukkan email terdaftar. Kami akan mengirim tautan reset (simulasi).</p>
+      <form id="formLupa" novalidate>
+        <label for="emailLupa">Email</label>
+        <input type="email" id="emailLupa" placeholder="nama@mail.com">
+        <p class="error" id="errLupa" role="alert"></p>
+        <div class="baris-tombol"><button class="btn garis" type="button" data-tutup>Batal</button><button class="btn utama" type="submit">Kirim tautan</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="m-daftar" role="dialog" aria-modal="true" aria-labelledby="tDaftar">
+    <div class="modal-box">
+      <h2 id="tDaftar">Daftar akun baru</h2>
+      <form id="formDaftar" novalidate>
+        <label for="dNama">Nama lengkap</label>
+        <input type="text" id="dNama" placeholder="Nama lengkap">
+        <label for="dEmail">Email</label>
+        <input type="email" id="dEmail" placeholder="nama@email.com">
+        <label for="dPass">Password</label>
+        <input type="password" id="dPass" placeholder="Minimal 6 karakter">
+        <label for="dPass2">Ulangi password</label>
+        <input type="password" id="dPass2" placeholder="Ketik ulang password">
+        <p class="error" id="errDaftar" role="alert"></p>
+        <div class="baris-tombol"><button class="btn garis" type="button" data-tutup>Batal</button><button class="btn utama" type="submit">Daftar</button></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
