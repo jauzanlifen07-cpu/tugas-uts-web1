@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pustaka Online - toko buku online">
+  <title>Dashboard | Pustaka Online</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Pustaka Online</span></a>
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html" aria-current="page">Dashboard</a>
+      <a href="stok.html" >Katalog</a>
+      <a href="checkout.html" >Pemesanan</a>
+      <a href="tracking.html" >Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil garis" id="btnLogout" type="button">Keluar</button></div>
+  </header>
+  <main class="wadah">
+    <section class="sambutan" aria-labelledby="greeting">
+      <h1 id="greeting">Halo!</h1>
+      <p id="tanggalJam"></p>
+    </section>
+    <section aria-label="Menu utama" class="menu-grid">
+      <a class="menu-kartu" href="stok.html"><h2>Informasi Stok / Katalog</h2><p>Lihat dan kelola stok buku.</p></a>
+      <a class="menu-kartu" href="tracking.html"><h2>Tracking Pengiriman</h2><p>Lacak paket dengan nomor Delivery Order.</p></a>
+      <button class="menu-kartu" id="btnLaporan" type="button"><h2>Laporan Pemesanan</h2><p>Ringkasan semua pesanan yang masuk.</p></button>
+      <button class="menu-kartu" id="btnHistory" type="button"><h2>History Transaksi</h2><p>Daftar transaksi yang sudah dibuat.</p></button>
+    </section>
+  </main>
+  <div class="modal" id="m-info" role="dialog" aria-modal="true" aria-labelledby="tInfo">
+    <div class="modal-box lebar-modal">
+      <h2 id="tInfo"></h2>
+      <div id="isiInfo"></div>
+      <div class="baris-tombol"><button class="btn utama" type="button" data-tutup>Tutup</button></div>
+    </div>
+  </div>
+  <footer class="footer"><p>UTS Pemrograman Web 1 &middot; Jauzan Lifen (321510259)</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

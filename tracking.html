@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pustaka Online - toko buku online">
+  <title>Tracking Pengiriman | Pustaka Online</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Pustaka Online</span></a>
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html" >Dashboard</a>
+      <a href="stok.html" >Katalog</a>
+      <a href="checkout.html" >Pemesanan</a>
+      <a href="tracking.html" aria-current="page">Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil garis" id="btnLogout" type="button">Keluar</button></div>
+  </header>
+  <main class="wadah">
+    <h1>Informasi Pengiriman</h1>
+    <section class="kartu" aria-labelledby="tCari">
+      <h2 id="tCari">Cari nomor Delivery Order</h2>
+      <form id="formTrack" class="cari-bar" novalidate>
+        <label for="noDO" class="sr-only">Nomor Delivery Order</label>
+        <input id="noDO" placeholder="Contoh: DO20260001" autocomplete="off">
+        <button class="btn utama" type="submit">Cari</button>
+      </form>
+      <p class="petunjuk">Coba: DO20260001, DO20260002, DO20260003, atau nomor dari pesanan Anda.</p>
+      <p class="error" id="errTrack" role="alert"></p>
+    </section>
+    <section class="kartu" id="hasil" hidden aria-live="polite"></section>
+  </main>
+  <footer class="footer"><p>UTS Pemrograman Web 1 &middot; Jauzan Lifen (321510259)</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

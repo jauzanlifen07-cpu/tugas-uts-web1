@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pustaka Online - toko buku online">
+  <title>Katalog & Stok | Pustaka Online</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Pustaka Online</span></a>
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html" >Dashboard</a>
+      <a href="stok.html" aria-current="page">Katalog</a>
+      <a href="checkout.html" >Pemesanan</a>
+      <a href="tracking.html" >Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil garis" id="btnLogout" type="button">Keluar</button></div>
+  </header>
+  <main class="wadah">
+    <h1>Informasi Stok / Katalog</h1>
+    <section class="kartu" aria-labelledby="tTambah">
+      <h2 id="tTambah">Tambah stok baru</h2>
+      <form id="formStok" class="form-grid" novalidate>
+        <div><label for="sKode">Kode</label><input id="sKode" placeholder="BK009"></div>
+        <div><label for="sJudul">Judul</label><input id="sJudul" placeholder="Judul buku"></div>
+        <div><label for="sPenulis">Penulis</label><input id="sPenulis" placeholder="Nama penulis"></div>
+        <div><label for="sKategori">Kategori</label>
+          <select id="sKategori"><option>Novel</option><option>Teknologi</option><option>Pengembangan Diri</option><option>Sejarah</option><option>Lainnya</option></select></div>
+        <div><label for="sHarga">Harga (Rp)</label><input id="sHarga" type="number" min="1000" placeholder="90000"></div>
+        <div><label for="sStok">Jumlah stok</label><input id="sStok" type="number" min="0" placeholder="10"></div>
+        <p class="error penuh" id="errStok" role="alert"></p>
+        <div class="penuh"><button class="btn utama" type="submit">Tambah baris stok</button></div>
+      </form>
+    </section>
+    <section class="kartu" aria-labelledby="tDaftarBuku">
+      <div class="judul-bar">
+        <h2 id="tDaftarBuku">Daftar buku <small id="jumlahJudul"></small></h2>
+        <input type="search" id="cari" placeholder="Cari judul, penulis, kategori" aria-label="Cari buku">
+      </div>
+      <div class="gulir">
+        <table>
+          <caption class="sr-only">Katalog buku</caption>
+          <thead><tr><th scope="col">Sampul</th><th scope="col">Kode</th><th scope="col">Judul</th><th scope="col">Penulis</th><th scope="col">Kategori</th><th scope="col">Harga</th><th scope="col">Stok</th><th scope="col">Aksi</th></tr></thead>
+          <tbody id="tbodyStok"></tbody>
+        </table>
+      </div>
+      <p class="petunjuk">Stok kurang dari 5 ditandai merah.</p>
+    </section>
+  </main>
+  <footer class="footer"><p>UTS Pemrograman Web 1 &middot; Jauzan Lifen (321510259)</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pustaka Online - toko buku online">
+  <title>Pemesanan | Pustaka Online</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Pustaka Online</span></a>
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html" >Dashboard</a>
+      <a href="stok.html" >Katalog</a>
+      <a href="checkout.html" aria-current="page">Pemesanan</a>
+      <a href="tracking.html" >Tracking</a>
+    </nav>
+    <div class="akun"><span id="namaUser"></span><button class="btn kecil garis" id="btnLogout" type="button">Keluar</button></div>
+  </header>
+  <main class="wadah">
+    <h1>Pemesanan Buku</h1>
+    <section class="kartu" aria-labelledby="tPilih">
+      <h2 id="tPilih">Pilih buku</h2>
+      <div class="form-grid">
+        <div><label for="pilihBuku">Buku</label><select id="pilihBuku"></select></div>
+        <div><label for="jumlah">Jumlah</label><input id="jumlah" type="number" min="1" value="1"></div>
+        <div class="bawah"><button class="btn utama" id="btnTambah" type="button">Tambah ke pesanan</button></div>
+      </div>
+      <p class="error" id="errItem" role="alert"></p>
+      <div class="gulir">
+        <table>
+          <caption class="sr-only">Daftar pesanan</caption>
+          <thead><tr><th scope="col">Judul</th><th scope="col">Harga</th><th scope="col">Jumlah</th><th scope="col">Subtotal</th><th scope="col">Aksi</th></tr></thead>
+          <tbody id="tbodyKeranjang"></tbody>
+        </table>
+      </div>
+    </section>
+    <form id="formPesan" class="kartu" novalidate aria-labelledby="tData">
+      <h2 id="tData">Data pemesan & pembayaran</h2>
+      <div class="form-grid">
+        <div><label for="pNama">Nama pemesan</label><input id="pNama" placeholder="Nama lengkap"></div>
+        <div><label for="pEmail">Email</label><input id="pEmail" type="email" placeholder="nama@email.com"></div>
+        <div><label for="pTelp">No. telepon</label><input id="pTelp" type="tel" placeholder="081234567890"></div>
+        <div><label for="pEkspedisi">Ekspedisi</label>
+          <select id="pEkspedisi"><option value="JNE|15000">JNE - Rp 15.000</option><option value="J&T Express|18000">J&T Express - Rp 18.000</option><option value="SiCepat|12000">SiCepat - Rp 12.000</option></select></div>
+        <div class="penuh"><label for="pAlamat">Alamat pengiriman</label><textarea id="pAlamat" rows="3" placeholder="Jalan, nomor, kota, kode pos"></textarea></div>
+        <div><label for="pBayar">Metode pembayaran</label>
+          <select id="pBayar"><option value="">-- Pilih --</option><option>Transfer Bank</option><option>E-Wallet</option><option>Bayar di Tempat (COD)</option></select></div>
+      </div>
+      <dl class="ringkas">
+        <div><dt>Subtotal</dt><dd id="rSub">Rp 0</dd></div>
+        <div><dt>Ongkos kirim</dt><dd id="rOngkir">Rp 0</dd></div>
+        <div class="total"><dt>Total bayar</dt><dd id="rTotal">Rp 0</dd></div>
+      </dl>
+      <p class="error" id="errPesan" role="alert"></p>
+      <button class="btn utama" type="submit">Buat pesanan</button>
+    </form>
+  </main>
+  <div class="modal" id="m-sukses" role="dialog" aria-modal="true" aria-labelledby="tSukses">
+    <div class="modal-box">
+      <h2 id="tSukses">Pesanan berhasil dibuat</h2>
+      <p>Nomor Delivery Order Anda:</p>
+      <p class="nomor-do" id="noDO"></p>
+      <div class="baris-tombol"><button class="btn garis" type="button" data-tutup>Tutup</button><a class="btn utama" id="linkTrack" href="tracking.html">Lacak pesanan</a></div>
+    </div>
+  </div>
+  <footer class="footer"><p>UTS Pemrograman Web 1 &middot; Jauzan Lifen (321510259)</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
