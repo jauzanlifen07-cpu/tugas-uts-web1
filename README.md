@@ -5,6 +5,7 @@ Aplikasi web front-end sederhana untuk pemesanan buku pada toko online.
 - **Nama:** Jauzan Lifen
 - **NIM:** 321510259
 - **Teknologi:** HTML5, CSS3, JavaScript (tanpa framework, tanpa server)
+- **Video penjelasan:** [https://youtu.be/eyHOgxmqoTE?si=1F5tblFRXGmEH4Kl](https://youtu.be/eyHOgxmqoTE?si=1F5tblFRXGmEH4Kl)
 
 ## Cara menjalankan
 
